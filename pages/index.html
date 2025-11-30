@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>まじかる❤ちゃっと</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="/static/css/index.css" />
+
+    <script
+      src="https://cdn.socket.io/4.8.1/socket.io.min.js"
+      integrity="sha384-mkQ3/7FUtcGyoppY6bz/PORYoGqOl7/aSUMn2ymDOJcapfS6PHqxhRTMh1RR0Q6+"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/static/js/index.js"></script>
+  </head>
+  <body>
+    <div class="overlay">
+      <div class="content">
+        <blockquote class="quote-39" id="overlayMessage">
+          <p>チャットに接続する前に、まず名前を設定してください。</p>
+          <div class="field has-addons">
+            <div class="control is-expanded">
+              <input type="text" class="input is-fullwidth" id="name" />
+            </div>
+            <div class="control">
+              <button class="button is-primary" id="name-submit">送信</button>
+            </div>
+          </div>
+        </blockquote>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-three-quarters chat">
+            <div class="box chat-area"></div>
+            <div class="box">
+              <div class="field has-addons">
+                <div class="control is-expanded">
+                  <input type="text" class="input is-fullwidth" id="message" />
+                </div>
+                <div class="control">
+                  <button class="button is-primary" id="message-submit">
+                    送信
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <ul class="box recipients-area"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

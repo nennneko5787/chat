@@ -1,0 +1,124 @@
+body,
+html {
+  width: 100dvw;
+  height: 100dvh;
+}
+
+.section,
+.container,
+.columns {
+  width: 100%;
+  height: 100%;
+}
+
+.overlay {
+  width: 100dvw;
+  height: 100dvh;
+
+  position: fixed;
+
+  background-color: #000000dd;
+  z-index: 1001;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quote-39 {
+  border-inline-start-color: #86cecb !important;
+}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+}
+
+.chat-area {
+  height: 100%;
+}
+
+.chat-area,
+.recipients-area {
+  overflow-y: scroll;
+}
+
+.recipients-area {
+  height: 100%;
+}
+
+/* messages */
+.system-message,
+.self-message,
+.others-message {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.system-message {
+  justify-content: center;
+}
+
+.system-message > .message {
+  border: solid 1px;
+  border-color: var(--bulma-text);
+  border-radius: 10px;
+
+  padding: 10px;
+}
+
+.self-message {
+  justify-content: right;
+}
+
+.self-message > .message {
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+}
+
+.self-message > .message > .message-content {
+  background-color: #00fa9a;
+  border-radius: 10px;
+  color: black;
+
+  padding: 10px;
+}
+
+.message > .name {
+  font-size: 75%;
+}
+
+.self-message > .message > .name {
+  text-align: right;
+}
+
+.others-message {
+  justify-content: left;
+}
+
+.others-message > .message {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.others-message > .message > .message-content {
+  background-color: #ffffff;
+  border-radius: 10px;
+  color: black;
+
+  padding: 10px;
+}
+
+.others-message > .message > .name {
+  text-align: left;
+}
+
+@media (max-width: 767px) {
+  .recipients-area {
+    height: 100vh;
+  }
+}
