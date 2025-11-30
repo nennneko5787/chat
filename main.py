@@ -21,7 +21,7 @@ def index(request: Request):
 def nameCheck(name: str = Query()):
     users = []
 
-    for name in sidToName.values():
-        users.append(name)
+    for username in sidToName.values():
+        users.append(username)
 
     return {"available": name not in users}

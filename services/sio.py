@@ -25,8 +25,8 @@ async def connect(sid: str, environ: Dict[str, Any], auth: Dict[str, Any]):
 
     users = []
 
-    for name in sidToName.values():
-        users.append(name)
+    for username in sidToName.values():
+        users.append(username)
 
     name = auth["name"]
 
