@@ -102,11 +102,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  nameSubmit.addEventListener("click", () => {
+  nameSubmit.addEventListener("click", async () => {
     const nameInput = document.getElementById("name");
 
     if (nameInput.value.replace(" ", "").replace("　", "").length <= 0) {
       return;
+    }
+
+    const response = await fetch(`/check?name=${nameInput.value}`);
+    const jsonData = await response.json();
+
+    if (!jsonData.available) {
+      return alert("名前が被っています！");
     }
 
     socket = io({ auth: { name: nameInput.value } });

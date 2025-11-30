@@ -23,7 +23,15 @@ async def connect(sid: str, environ: Dict[str, Any], auth: Dict[str, Any]):
     if not auth.get("name") or not isinstance(auth["name"], str):
         raise ConnectionRefusedError()
 
+    users = []
+
+    for name in sidToName.values():
+        users.append(name)
+
     name = auth["name"]
+
+    if name in users:
+        raise ConnectionRefusedError()
 
     sidToName[sid] = name
     nameToSid[name] = sid

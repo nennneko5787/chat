@@ -1,9 +1,9 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Query, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from socketio import ASGIApp
 
-from services.sio import sio
+from services.sio import sidToName, sio
 
 app = FastAPI()
 templates = Jinja2Templates("pages")
@@ -15,3 +15,13 @@ app.mount("/static", StaticFiles(directory="static"), "static")
 @app.get("/")
 def index(request: Request):
     return templates.TemplateResponse(request, "index.html")
+
+
+@app.get("/check")
+def nameCheck(name: str = Query()):
+    users = []
+
+    for name in sidToName.values():
+        users.append(name)
+
+    return {"available": name not in users}
