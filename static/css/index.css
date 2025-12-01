@@ -93,7 +93,6 @@ html {
   font-size: 75%;
 }
 
-.self-message > .message > .message-content,
 .self-message > .message > .name {
   text-align: right;
 }
